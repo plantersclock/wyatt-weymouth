@@ -87,14 +87,6 @@ const TVGuideControl = () => {
 
   return (
     <div className="relative flex  flex-col justify-center items-center h-screen ">
-      <button
-        onClick={() => {
-          setUrlIndex(urlIndex + 1);
-        }}
-        className="absolute bottom-4 left-4 bg-blue-500 text-white px-4 py-2 w-20 z-50"
-      >
-        Toggle Player
-      </button>
       <div className="flex-1 flex w-full">
         <div className="bg-gray-200 aspect-[4/3]">
           <ReactPlayerComponent
