@@ -67,7 +67,15 @@ const InifiniteCarousel = ({
     return () => {
       controls?.stop();
     };
-  }, [yTranslation, width, duration, rerender, mustFinish, height]);
+  }, [
+    yTranslation,
+    width,
+    duration,
+    rerender,
+    mustFinish,
+    height,
+    data.length,
+  ]);
 
   const calcItemSize = (itemSize: number) => {
     return 3 - itemSize;
