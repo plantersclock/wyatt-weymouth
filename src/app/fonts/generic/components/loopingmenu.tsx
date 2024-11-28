@@ -15,8 +15,8 @@ const InifiniteCarousel = ({
   handleItemClick,
   selectedItemTitle,
 }: any) => {
-  const FAST_DURATION = data.length * 2;
-  const SLOW_DURATION = 100;
+  const FAST_DURATION = data.length * 4;
+  const SLOW_DURATION = 1000;
 
   const [duration, setDuration] = useState(FAST_DURATION);
 
