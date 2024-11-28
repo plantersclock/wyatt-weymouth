@@ -9,17 +9,6 @@ import {
 import React, { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
 
-// const items = [
-//   "JBLM",
-//   "FQLM",
-//   "HBMR",
-//   "STFU",
-//   "LMAO",
-//   "PRTY",
-//   "RDCL",
-//   "HLPM",
-//   "SPKL",
-// ];
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const InifiniteCarousel = ({
   data,
