@@ -2,20 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.scanlines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.2) 4px
+  );
+  opacity: 0.3;
+}
+
+.crt-chromatic {
+  position: relative;
+  color: yellow;
+}
+
+.crt-chromatic::before,
+.crt-chromatic::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.crt-chromatic::before {
+  color: red;
+  transform: translate(-1px, 0);
+}
+
+.crt-chromatic::after {
+  color: blue;
+  transform: translate(1px, 0);
+}
+
+.chromatic {
+  text-shadow: -1px -1px 3 rgb(255, 25, 25),
+    /* Red offset */ 1px 1px 3 rgb(0, 234, 255),
+    /* Blue offset */ 2px 2px 3px rgba(0, 0, 0, 1); /* Dark drop shadow */
+}
+
+.chromatic-light {
+  text-shadow: -1px -1px 3 rgb(255, 25, 25, 0.5),
+    /* Red offset */ 1px 1px 3 rgb(0, 234, 255, 0.5),
+    /* Blue offset */ 2px 2px 3px rgba(0, 0, 0, 1); /* Dark drop shadow */
 }
