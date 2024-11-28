@@ -20,7 +20,7 @@ import useMeasure from "react-use-measure";
 //   "HLPM",
 //   "SPKL",
 // ];
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const InifiniteCarousel = ({
   data,
   handleItemClick,
