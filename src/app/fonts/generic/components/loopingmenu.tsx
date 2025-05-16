@@ -6,7 +6,7 @@ import React, { useEffect, useRef } from "react";
 const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const scrollSpeed = 2; // pixels per tick
+  const scrollSpeed = 1; // pixels per tick
   const tickRate = 30; // ms
   const pauseDuration = 1000; // ms
 
