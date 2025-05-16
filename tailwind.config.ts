@@ -15,6 +15,7 @@ export default {
         "theme-light-blue": "#48509a",
         "theme-very-light-blue": "#3391dd",
         "theme-red": "#673030",
+        "theme-red-menu": "#8b0008",
       },
     },
   },

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import ReactPlayerComponent from "./reactplayer";
 import LoopingMenu from "./loopingmenu";
+import TimeBar from "./timebar";
 
 const TVGuideControl = () => {
   const data = [
@@ -105,7 +106,10 @@ const TVGuideControl = () => {
             isMuted={isMuted}
           />
         </div>
-        <div className="w-full flex flex-col h-full justify-center items-center p-6">
+        <div className="w-full flex flex-col h-full justify-center items-center p-6 relative">
+          <div className="font- absolute bg-theme-red-menu top-2 right-2 saturate-20 text-white px-2 py-1 rounded-md text-lg font-bold cursor-pointer">
+            MENU
+          </div>
           <div className="relative text-white text-6xl font-bold flex text-center">
             <span className="relative chromatic">
               {data[urlIndex] && data[urlIndex].title}
@@ -123,32 +127,7 @@ const TVGuideControl = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex text-5xl">
-        <div className="flex-1">
-          <div className="bg-theme-light-blue h-16 rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 text-white  font-bold flex items-center justify-center">
-            <span className="relative drop-shadow-md chromatic-light ">
-              11:15:11
-            </span>
-          </div>
-        </div>
-        <div className="grid grid-cols-3 flex-[6]">
-          <div className="bg-theme-light-blue h-16 rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 text-yellow-300  font-bold flex items-center justify-center">
-            <span className="relative drop-shadow-md chromatic-light ">
-              11:00 AM
-            </span>
-          </div>
-          <div className="bg-theme-light-blue h-16 rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 text-yellow-300  font-bold flex items-center justify-center">
-            <span className="relative drop-shadow-md chromatic-light ">
-              11:30 AM
-            </span>
-          </div>
-          <div className="bg-theme-light-blue h-16 rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 text-yellow-300  font-bold flex items-center justify-center">
-            <span className="relative drop-shadow-md chromatic-light ">
-              12:00 PM
-            </span>
-          </div>
-        </div>
-      </div>
+      <TimeBar />
       <LoopingMenu
         data={data}
         handleItemClick={handleItemClick}
