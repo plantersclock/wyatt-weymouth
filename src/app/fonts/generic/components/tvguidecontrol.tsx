@@ -72,6 +72,17 @@ const TVGuideControl = () => {
       videoUrl: "https://www.youtube.com/watch?v=DVqnmu5KINM",
       size: 1,
     },
+    {
+      ch: 7,
+      channel: "TEST",
+      year: "2025",
+      title: "TEST - TEST",
+      role: "Colorist",
+      description:
+        "Drab Majesty presents a new for 2022 video for `Noise of the Void` from the album 'Modern Mirror.",
+      videoUrl: "https://www.youtube.com/watch?v=DVqnmu5KINM",
+      size: 1,
+    },
   ];
 
   const [urlIndex, setUrlIndex] = useState(0);
