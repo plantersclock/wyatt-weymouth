@@ -36,26 +36,26 @@ const TimeBar = () => {
   };
 
   return (
-    <div className="w-full flex text-5xl">
+    <div className="w-full flex text-2xl sm:text-4xl 2xl:text-5xl">
       <div className="flex-1">
-        <div className="bg-theme-light-blue h-16 rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 text-white  font-bold flex items-center justify-center">
+        <div className="bg-theme-light-blue h-12 sm:h-16 rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 text-white  font-bold flex items-center justify-center w-[130px] sm:w-[185px] 2xl:w-[220px]">
           <span className="relative drop-shadow-md chromatic-light ">
             {formatTime(time).replace(/\s?[AP]M$/, "")}
           </span>
         </div>
       </div>
       <div className="grid grid-cols-3 flex-[6]">
-        <div className="bg-theme-light-blue h-16 rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 text-yellow-300  font-bold flex items-center justify-center">
+        <div className="col-span-3 xl:col-span-1 bg-theme-light-blue h-12 sm:h-16 rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 text-yellow-300  font-bold flex items-center justify-center">
           <span className="relative drop-shadow-md chromatic-light ">
             {formatRoundedStaticTime(time)}
           </span>
         </div>
-        <div className="bg-theme-light-blue h-16 rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 text-yellow-300  font-bold flex items-center justify-center">
+        <div className="hidden xl:flex bg-theme-light-blue h-12 sm:h-16 rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 text-yellow-300  font-bold  items-center justify-center">
           <span className="relative drop-shadow-md chromatic-light ">
             {formatRoundedStaticTime(new Date(time.getTime() + 30 * 60 * 1000))}
           </span>
         </div>
-        <div className="bg-theme-light-blue h-16 rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 text-yellow-300  font-bold flex items-center justify-center">
+        <div className="hidden xl:flex bg-theme-light-blue h-12 sm:h-16 rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 text-yellow-300  font-bold  items-center justify-center">
           <span className="relative drop-shadow-md chromatic-light ">
             {formatRoundedStaticTime(new Date(time.getTime() + 60 * 60 * 1000))}
           </span>

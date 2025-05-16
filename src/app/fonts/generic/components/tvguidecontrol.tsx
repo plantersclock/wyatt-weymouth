@@ -98,41 +98,47 @@ const TVGuideControl = () => {
   };
 
   return (
-    <div className="relative flex  flex-col justify-center items-center h-screen ">
-      <div className="flex-1 flex w-full">
-        <div className="bg-gray-200 aspect-[4/3]">
-          <ReactPlayerComponent
-            url={(data[urlIndex] && data[urlIndex].videoUrl) || ""}
-            isMuted={isMuted}
-          />
+    <div className="relative flex flex-col justify-center items-center h-screen ">
+      <div className="z-30 absolute bg-theme-red-menu top-2 right-2 saturate-20 text-white px-2 py-1 rounded-md text-lg font-bold cursor-pointer">
+        MENU
+      </div>
+      <div className="flex-1 landscape:flex xl:flex w-full landscape:max-h-[50vh]">
+        <div className="bg-black   xl:flex justify-center ">
+          <div className="bg-gray-200 w-full portrait:h-[33vh] landscape:h-full xl:h-full aspect-[4/3]">
+            <ReactPlayerComponent
+              url={(data[urlIndex] && data[urlIndex].videoUrl) || ""}
+              isMuted={isMuted}
+            />
+          </div>
         </div>
-        <div className="w-full flex flex-col h-full justify-center items-center p-6 relative">
-          <div className="font- absolute bg-theme-red-menu top-2 right-2 saturate-20 text-white px-2 py-1 rounded-md text-lg font-bold cursor-pointer">
-            MENU
-          </div>
-          <div className="relative text-white text-6xl font-bold flex text-center">
-            <span className="relative chromatic">
-              {data[urlIndex] && data[urlIndex].title}
-            </span>
-          </div>
-          <div className="relative text-yellow-300 text-3xl font-bold mt-4">
-            <span className="relative chromatic flex text-center">
-              {data[urlIndex] && data[urlIndex].role}
-            </span>
-          </div>
-          <div className="relative  text-white text-xl font-bold mt-4">
-            <span className="relative chromatic flex text-center">
-              {data[urlIndex] && data[urlIndex].description}
-            </span>
+        <div className=" w-full flex flex-col justify-center items-center p-6 relative portrait:h-[33vh] landscape:h-full xl:h-auto">
+          <div className="overflow-auto">
+            <div className="relative text-white text-3xl md:text-4xl 2xl:text-6xl font-bold flex text-center justify-center">
+              <span className="relative chromatic">
+                {data[urlIndex] && data[urlIndex].title}
+              </span>
+            </div>
+            <div className="relative text-yellow-300 text-base md:text-xl 2xl:text-3xl font-bold mt-2 md:mt-4">
+              <span className="relative chromatic flex text-center">
+                {data[urlIndex] && data[urlIndex].role}
+              </span>
+            </div>
+            <div className="relative  text-white text-sm md:text-base 2xl:text-xl font-bold mt-2 md:mt-4">
+              <span className=" relative chromatic flex text-center">
+                {data[urlIndex] && data[urlIndex].description}
+              </span>
+            </div>
           </div>
         </div>
       </div>
+
       <TimeBar />
       <LoopingMenu
         data={data}
         handleItemClick={handleItemClick}
         selectedItemTitle={selectedItemTitle}
       />
+
       <div className="scanlines absolute top-0 left-0 w-full h-full pointer-events-none"></div>
     </div>
   );
