@@ -37,6 +37,9 @@ const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
       const oneThird = fullHeight / 3;
 
       container.scrollTop = oneThird;
+
+      // Force a reflow
+      container.style.transform = "translateZ(0)";
     };
 
     scrollToMiddle();
@@ -121,6 +124,9 @@ const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
         scrollBehavior: "auto",
         scrollbarWidth: "none",
         msOverflowStyle: "none",
+        WebkitOverflowScrolling: "touch",
+        contain: "none",
+        transform: "translateZ(0)",
       }}
     >
       {repeatedItems.map((item, index) => (
@@ -128,20 +134,20 @@ const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
           {/* MOBILE */}
           <div
             key={"row mobile " + index}
-            className="w-full flex xl:hidden text-xl sm:text-3xl 2xl:text-4xl h-[68px] sm:h-[98px] bg-theme-blue"
+            className="w-full flex xl:hidden text-xl sm:text-3xl 2xl:text-4xl h-[64px] sm:h-[96px] bg-theme-blue"
           >
             <div className="flex-1">
-              <div className="text-2xl sm:text-3xl 2xl:text-4xl relative w-[130px] sm:w-[185px] 2xl:w-[220px] flex justify-end  leading-none items-center h-[68px] bg-theme-blue rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 ">
+              <div className="text-2xl sm:text-3xl 2xl:text-4xl relative w-[130px] sm:w-[185px] 2xl:w-[220px] flex justify-end  leading-none items-center h-[64px] bg-theme-blue rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 ">
                 <p className="flex text-yellow-300  font-bold drop-shadow-md chromatic-light mr-4 text-right">
                   {item?.ch} <br />
                   {item?.channel}
                 </p>
               </div>
             </div>
-            <div className=" w-full flex-[6] h-[68px] sm:h-[98px] grid grid-col-1">
+            <div className="line-clamp-2 w-full flex-[6] h-[64px] sm:h-[96px] grid grid-col-1">
               {item.size === 1 && (
                 <div
-                  className={` flex rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 col-span-1 hover:bg-theme-very-light-blue cursor-pointer ${
+                  className={`flex rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 col-span-1 hover:bg-theme-very-light-blue cursor-pointer ${
                     selectedItemTitle !== item?.title
                       ? item?.color === "red"
                         ? "bg-theme-red"
@@ -153,14 +159,14 @@ const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
                     handleItemClick(item.title);
                   }}
                 >
-                  <span className="relative drop-shadow-md chromatic-light text-white  font-bold max-h-20 overflow-hidden">
+                  <span className="relative drop-shadow-md chromatic-light text-white font-bold max-h-20">
                     {item?.title} {item.year && `(${item?.year})`}
                   </span>
                 </div>
               )}
               {item.size === 2 && (
                 <div
-                  className={`bg-theme-blue flex rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 col-span-2 hover:bg-theme-very-light-blue cursor-pointer ${
+                  className={`bg-theme-blue line-clamp-2 flex rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 col-span-2 hover:bg-theme-very-light-blue cursor-pointer ${
                     selectedItemTitle !== item?.title
                       ? item?.color === "red"
                         ? "bg-theme-red"
@@ -172,14 +178,14 @@ const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
                     handleItemClick(item.title);
                   }}
                 >
-                  <span className="relative drop-shadow-md chromatic-light text-white  font-bold max-h-20 overflow-hidden">
+                  <span className="relative drop-shadow-md chromatic-light text-white  font-bold max-h-20  ">
                     {item?.title} {item.year && `(${item?.year})`}
                   </span>
                 </div>
               )}
               {item.size === 3 && (
                 <div
-                  className={` bg-theme-blue flex rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 col-span-3 hover:bg-theme-very-light-blue cursor-pointer ${
+                  className={` bg-theme-blue line-clamp-2 flex rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 col-span-3 hover:bg-theme-very-light-blue cursor-pointer ${
                     selectedItemTitle !== item?.title
                       ? item?.color === "red"
                         ? "bg-theme-red"
@@ -191,7 +197,7 @@ const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
                     handleItemClick(item.title);
                   }}
                 >
-                  <div className=" line-clamp-2 sm:line-clamp-2 text-ellipsis overflow-hidden relative drop-shadow-md chromatic-light text-white font-bold text-wrap leading-tight mb-1">
+                  <div className=" text-ellipsis relative drop-shadow-md chromatic-light text-white font-bold text-wrap leading-tight mb-1">
                     {item?.title} {item.year && `(${item?.year})`}{" "}
                     <span className=" font-medium">{item.description}</span>
                   </div>
@@ -202,17 +208,17 @@ const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
           {/* DESKTOP */}
           <div
             key={"row " + index}
-            className="w-full hidden xl:flex text-3xl 2xl:text-4xl h-[98px]"
+            className="w-full hidden xl:flex text-3xl 2xl:text-4xl h-[96px]"
           >
             <div className="flex-1">
-              <div className="relative w-full flex justify-end mr-4 leading-none items-center h-[98px] bg-theme-blue rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 ">
+              <div className="relative w-full flex justify-end mr-4 leading-none items-center h-[96px] bg-theme-blue rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 ">
                 <p className="flex text-yellow-300  font-bold drop-shadow-md chromatic-light mr-4 text-right">
                   {item?.ch} <br />
                   {item?.channel}
                 </p>
               </div>
             </div>
-            <div className=" w-full flex-[6] h-[98px] grid grid-cols-3">
+            <div className=" w-full flex-[6] h-[96px] grid grid-cols-3">
               {item.size === 1 && (
                 <div
                   className={` flex rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 col-span-1 hover:bg-theme-very-light-blue cursor-pointer ${
