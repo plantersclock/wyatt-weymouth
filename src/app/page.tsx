@@ -33,7 +33,7 @@ export default async function Home() {
           description: project.fields.description,
           videoUrl: project.fields.videoUrl,
           size: project.fields.size,
-          ...(project.fields.isRed === "yes" && { color: "red" }),
+          ...(project.fields.isRed === true && { color: "red" }),
           ...(project.fields.year && { year: project.fields.year }),
         })
       )
