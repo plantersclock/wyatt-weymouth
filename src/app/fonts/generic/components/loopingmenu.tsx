@@ -124,21 +124,21 @@ const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
       }}
     >
       {repeatedItems.map((item, index) => (
-        <>
+        <div key={"row " + index}>
           {/* MOBILE */}
           <div
             key={"row mobile " + index}
-            className="w-full flex xl:hidden text-xl sm:text-3xl 2xl:text-4xl h-[64px] sm:h-[96px] bg-theme-blue"
+            className="w-full flex xl:hidden text-xl sm:text-3xl 2xl:text-4xl h-[68px] sm:h-[98px] bg-theme-blue"
           >
             <div className="flex-1">
-              <div className="text-2xl sm:text-3xl 2xl:text-4xl relative w-[130px] sm:w-[185px] 2xl:w-[220px] flex justify-end  leading-none items-center sm:h-24 bg-theme-blue rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 ">
+              <div className="text-2xl sm:text-3xl 2xl:text-4xl relative w-[130px] sm:w-[185px] 2xl:w-[220px] flex justify-end  leading-none items-center h-[68px] bg-theme-blue rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 ">
                 <p className="flex text-yellow-300  font-bold drop-shadow-md chromatic-light mr-4 text-right">
                   {item?.ch} <br />
                   {item?.channel}
                 </p>
               </div>
             </div>
-            <div className=" w-full flex-[6] h-[64px] sm:h-[96px] grid grid-col-1">
+            <div className=" w-full flex-[6] h-[68px] sm:h-[98px] grid grid-col-1">
               {item.size === 1 && (
                 <div
                   className={` flex rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 col-span-1 hover:bg-theme-very-light-blue cursor-pointer ${
@@ -202,17 +202,17 @@ const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
           {/* DESKTOP */}
           <div
             key={"row " + index}
-            className="w-full hidden xl:flex text-3xl 2xl:text-4xl h-[96px]"
+            className="w-full hidden xl:flex text-3xl 2xl:text-4xl h-[98px]"
           >
             <div className="flex-1">
-              <div className="relative w-full flex justify-end mr-4 leading-none items-center h-24 bg-theme-blue rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 ">
+              <div className="relative w-full flex justify-end mr-4 leading-none items-center h-[98px] bg-theme-blue rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 ">
                 <p className="flex text-yellow-300  font-bold drop-shadow-md chromatic-light mr-4 text-right">
                   {item?.ch} <br />
                   {item?.channel}
                 </p>
               </div>
             </div>
-            <div className=" w-full flex-[6] h-[96px] grid grid-cols-3">
+            <div className=" w-full flex-[6] h-[98px] grid grid-cols-3">
               {item.size === 1 && (
                 <div
                   className={` flex rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 col-span-1 hover:bg-theme-very-light-blue cursor-pointer ${
@@ -311,7 +311,7 @@ const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
               )}
             </div>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );
