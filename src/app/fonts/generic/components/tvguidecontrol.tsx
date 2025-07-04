@@ -113,19 +113,19 @@ const TVGuideControl = ({ data }: any) => {
             />
           </div>
         </div>
-        <div className=" w-full flex flex-col justify-center items-center p-6 relative portrait:h-[20vh] landscape:h-full xl:h-auto">
+        <div className=" w-full flex flex-col justify-center items-center px-4 py-3 sm:p-6 relative portrait:h-[20vh] landscape:h-full xl:h-auto">
           <div className="overflow-auto">
-            <div className="relative text-white text-3xl md:text-4xl 2xl:text-6xl font-bold flex text-center justify-center">
+            <div className="relative text-white text-xl sm:text-3xl md:text-4xl 2xl:text-6xl font-bold flex text-center justify-center">
               <span className="relative chromatic">
                 {data[urlIndex] && data[urlIndex].title}
               </span>
             </div>
-            <div className="relative text-yellow-300 text-base md:text-xl 2xl:text-3xl font-bold mt-2 md:mt-4 flex justify-center">
+            <div className="relative text-yellow-300 text-base md:text-xl 2xl:text-3xl font-bold mt-0 sm:mt-2 md:mt-4 flex justify-center">
               <span className="relative chromatic flex text-center">
                 {data[urlIndex] && data[urlIndex].role}
               </span>
             </div>
-            <div className="relative  text-white text-sm md:text-base 2xl:text-xl font-bold mt-2 md:mt-4">
+            <div className="relative  text-white text-sm md:text-base 2xl:text-xl font-bold mt-1 sm:mt-2 md:mt-4 flex justify-center">
               <span className=" relative chromatic flex text-center">
                 {data[urlIndex] && data[urlIndex].description}
               </span>
