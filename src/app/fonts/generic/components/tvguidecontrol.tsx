@@ -126,7 +126,7 @@ const TVGuideControl = ({ data }: any) => {
             src={wam.src}
             fill
             alt="wam logo"
-            className="grayscale contrast-200 opacity-80"
+            className="grayscale contrast-200 opacity-80 hover:grayscale-0 hover:contrast-100 transition duration-300"
           />
         </div>
       </Link>
