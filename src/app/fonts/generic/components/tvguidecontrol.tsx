@@ -153,9 +153,15 @@ const TVGuideControl = ({ data }: any) => {
               </span>
             </div>
             <div className="relative  text-white text-sm md:text-base 2xl:text-xl font-bold mt-1 sm:mt-2 md:mt-4 flex justify-center">
-              <span className=" relative chromatic flex text-center">
-                {data[urlIndex] && data[urlIndex].description}
-              </span>
+              <span
+                className=" relative chromatic flex text-center"
+                dangerouslySetInnerHTML={{
+                  __html: (
+                    (data[urlIndex] && data[urlIndex].description) ||
+                    ""
+                  ).replace(/\n/g, "<br>"),
+                }}
+              ></span>
             </div>
           </div>
         </div>
