@@ -8,6 +8,25 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        marqueeslow: {
+          "0%": { transform: "translateX(15%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        marqueemedium: {
+          "0%": { transform: "translateX(30%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        marqueefast: {
+          "0%": { transform: "translateX(40%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
+      animation: {
+        "marquee-slow": "marqueeslow 60s linear infinite",
+        "marquee-medium": "marqueemedium 45s linear infinite",
+        "marquee-fast": "marqueefast 30s linear infinite",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

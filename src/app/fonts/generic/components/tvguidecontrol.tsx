@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import ReactPlayerComponent from "./reactplayer";
 import LoopingMenu from "./loopingmenu";
 import TimeBar from "./timebar";
+import Link from "next/link";
+import wtv from "../../../../images/wtv.webp";
+import Image from "next/image";
 
 const TVGuideControl = ({ data }: any) => {
   // const data = [
@@ -101,9 +104,18 @@ const TVGuideControl = ({ data }: any) => {
 
   return (
     <div className="relative flex flex-col justify-center items-center h-screen ">
-      <div className="z-30 absolute bg-theme-red-menu top-2 right-2 saturate-20 text-white px-2 py-1 rounded-md text-lg font-bold cursor-pointer">
-        MENU
-      </div>
+      <Link
+        href="/about"
+        className="z-30 absolute  top-2 right-2 sm:top-3 sm:right-3 "
+      >
+        <div className="bg-white w-14 sm:w-20 h-14 sm:h-20 aspect-square saturate-20 text-white px-1 sm:px-2 py-1 rounded-md text-sm sm:text-lg font-bold cursor-pointer flex flex-col items-center shadow-md transition-transform duration-200 ease-in-out hover:scale-105">
+          <div className="relative w-8 h-8 sm:w-12 sm:h-12 aspect-square -mr-[10%]">
+            <Image src={wtv.src} fill alt="wtv logo" />
+          </div>
+          <p className=" text-blue-800">ABOUT</p>
+        </div>
+      </Link>
+
       <div className="flex-1 landscape:flex xl:flex w-full landscape:max-h-[50vh]">
         <div className="bg-black   xl:flex justify-center ">
           <div className="bg-gray-200 w-full portrait:h-[33vh] landscape:h-full xl:h-full aspect-[4/3]">

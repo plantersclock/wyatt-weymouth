@@ -210,7 +210,7 @@ const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
           {/* DESKTOP */}
           <div
             key={"row " + index}
-            className="w-full hidden xl:flex text-2xl 2xl:text-3xl h-[110px]"
+            className="w-full hidden xl:flex text-2xl xl:text-3xl h-[110px]"
           >
             <div className="flex-1">
               <div className="relative w-full flex justify-end mr-4 leading-none items-center h-[110px] bg-theme-blue rounded border-[3px] border-r-blue-950 border-b-blue-950  p-1 ">
@@ -235,7 +235,7 @@ const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
                     handleItemClick(item.title);
                   }}
                 >
-                  <span className="mt-1 relative drop-shadow-md chromatic-light text-white  font-bold max-h-20 overflow-hidden">
+                  <span className="mt-1 relative drop-shadow-md chromatic-light text-white  font-bold max-h-[4.5rem] overflow-hidden">
                     {item?.title} {item.year && `(${item?.year})`}
                   </span>
                 </div>
@@ -254,7 +254,7 @@ const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
                     handleItemClick(item.title);
                   }}
                 >
-                  <span className="mt-1 relative drop-shadow-md chromatic-light text-white  font-bold max-h-20 overflow-hidden">
+                  <span className="mt-1 relative drop-shadow-md chromatic-light text-white  max-h-[4.5rem] font-bold  overflow-hidden">
                     {item?.title} {item.year && `(${item?.year})`}
                   </span>
                 </div>
