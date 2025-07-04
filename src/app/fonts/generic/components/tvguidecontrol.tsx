@@ -6,6 +6,7 @@ import LoopingMenu from "./loopingmenu";
 import TimeBar from "./timebar";
 import Link from "next/link";
 import wtv from "../../../../images/wtv.webp";
+import wam from "../../../../images/logo-no-border.webp";
 import Image from "next/image";
 
 const TVGuideControl = ({ data }: any) => {
@@ -113,6 +114,20 @@ const TVGuideControl = ({ data }: any) => {
             <Image src={wtv.src} fill alt="wtv logo" />
           </div>
           <p className=" text-blue-800">ABOUT</p>
+        </div>
+      </Link>
+
+      <Link
+        href="https://www.wamwebdev.com/"
+        className="z-30 fixed  bottom-2 left-2 sm:bottom-4 sm:left-4 "
+      >
+        <div className="relative w-6 h-6 sm:w-8 sm:h-8 aspect-square transition-transform duration-200 ease-in-out hover:scale-105 rounded-full overflow-hidden shadow-md border border-gray-600">
+          <Image
+            src={wam.src}
+            fill
+            alt="wam logo"
+            className="grayscale contrast-200 opacity-80"
+          />
         </div>
       </Link>
 
