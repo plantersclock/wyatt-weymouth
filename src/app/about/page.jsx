@@ -121,14 +121,14 @@ const page = () => {
               />
             </Link>
 
-            <div className="flex items-center flex-col">
+            <div className="flex items-center flex-col relative">
               <a a href="mailto:wyatt.weymouth@gmail.com ">
                 <UilEnvelopeAlt
                   className="h-8 w-8 md:h-12 md:w-12 text-white transition-transform duration-200 ease-in-out hover:scale-105 cursor-pointer"
                   style={{ filter: "url(#chromatic)" }}
                 />
               </a>
-              <p className="text-white chromatic opacity-80  text-[clamp(.25rem,3vw,1.9rem)] sm:text-[clamp(.25rem,1.25vw,1.9rem)] md:text-base">
+              <p className="absolute top-[100%] text-white chromatic opacity-80  text-[clamp(.25rem,2vw,1.9rem)] sm:text-[clamp(.25rem,1.25vw,1.9rem)] md:text-base">
                 wyatt.weymouth@gmail.com
               </p>
             </div>
@@ -146,7 +146,7 @@ const page = () => {
           </div>
         </div>
 
-        <footer className="text-[clamp(.25rem,2vw,1.9rem)] sm:text-[clamp(.25rem,1.25vw,1.1rem)]  flex flex-col sm:flex-row justify-between mx-auto w-[98%] text-white chromatic opacity-75 absolute bottom-1 left-1">
+        <footer className="text-[clamp(.25rem,2vw,1.9rem)] sm:text-[clamp(.25rem,1.25vw,1.1rem)]  flex flex-col sm:flex-row justify-between mx-auto w-[98%] text-white chromatic opacity-75 ">
           <p>
             © {new Date().getFullYear()} Wyatt Weymouth. All rights reserved.
           </p>
