@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useState } from "react";
@@ -8,6 +9,8 @@ import Link from "next/link";
 import wtv from "../../../../images/wtv.webp";
 import wam from "../../../../images/logo-no-border.webp";
 import Image from "next/image";
+
+import { marked } from "marked";
 
 const TVGuideControl = ({ data }: any) => {
   // const data = [
@@ -109,11 +112,11 @@ const TVGuideControl = ({ data }: any) => {
         href="/about"
         className="z-30 absolute  top-2 right-2 sm:top-3 sm:right-3 "
       >
-        <div className="bg-white w-14 sm:w-20 h-14 sm:h-20 aspect-square saturate-20 text-white px-1 sm:px-2 py-1 rounded-md text-sm sm:text-lg font-bold cursor-pointer flex flex-col items-center shadow-md transition-transform duration-200 ease-in-out hover:scale-105">
+        <div className=" w-14 sm:w-20 h-14 sm:h-20 aspect-square saturate-20 text-white px-1 sm:px-2 py-1 rounded-md text-sm sm:text-lg font-bold cursor-pointer flex flex-col items-center  transition-transform duration-200 ease-in-out hover:scale-105">
           <div className="relative w-8 h-8 sm:w-12 sm:h-12 aspect-square -mr-[10%]">
             <Image src={wtv.src} fill alt="wtv logo" />
           </div>
-          <p className=" text-blue-800">ABOUT</p>
+          <p className=" text-white">INFO</p>
         </div>
       </Link>
 
@@ -133,12 +136,22 @@ const TVGuideControl = ({ data }: any) => {
 
       <div className="flex-1 landscape:flex xl:flex w-full landscape:max-h-[50vh]">
         <div className="bg-black   xl:flex justify-center ">
-          <div className="bg-gray-200 w-full portrait:h-[33vh] landscape:h-full xl:h-full aspect-[4/3]">
-            <ReactPlayerComponent
-              url={(data[urlIndex] && data[urlIndex].videoUrl) || ""}
-              isMuted={isMuted}
-            />
-          </div>
+          {data[urlIndex] && data[urlIndex].videoUrl ? (
+            <div className="bg-gray-200 w-full portrait:h-[33vh] landscape:h-full landscape:min-h-[30vh] xl:h-full aspect-[4/3]">
+              <ReactPlayerComponent
+                url={(data[urlIndex] && data[urlIndex].videoUrl) || ""}
+                isMuted={isMuted}
+              />
+            </div>
+          ) : (
+            <div className="relative bg-black w-full portrait:h-[33vh] landscape:h-full landscape:min-h-[30vh] xl:h-full aspect-[4/3]">
+              <img
+                src={data[urlIndex]?.imageUrl}
+                alt="backup-image"
+                className="absolute inset-0 w-full h-full object-contain"
+              />
+            </div>
+          )}
         </div>
         <div className=" w-full flex flex-col justify-center items-center px-4 py-3 sm:p-6 relative portrait:h-[20vh] landscape:h-full xl:h-auto">
           <div className="overflow-auto">
@@ -156,13 +169,19 @@ const TVGuideControl = ({ data }: any) => {
               <span
                 className=" relative chromatic flex text-center"
                 dangerouslySetInnerHTML={{
-                  __html: (
-                    (data[urlIndex] && data[urlIndex].description) ||
-                    ""
-                  ).replace(/\n/g, "<br>"),
+                  __html: marked.parse(
+                    (data[urlIndex]?.description ?? "").replace(/\n/g, "<br>")
+                  ),
                 }}
               ></span>
             </div>
+            {data[urlIndex] && data[urlIndex].bonusText && (
+              <div className="relative  text-yellow-300 text-sm md:text-base 2xl:text-xl mt-1 sm:mt-2 md:mt-4 flex justify-center">
+                <span className="relative chromatic flex text-center">
+                  {data[urlIndex] && data[urlIndex].bonusText}
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>

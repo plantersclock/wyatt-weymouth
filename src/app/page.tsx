@@ -10,6 +10,7 @@ export default async function Home() {
 
     const portfolioProjects = portfolio.items;
 
+    console.log("LOOK HERE");
     console.log(portfolioProjects);
 
     const transformedAndSorted = portfolioProjects
@@ -22,6 +23,8 @@ export default async function Home() {
           role: string;
           description: string;
           videoUrl: string;
+          imageUrl: string;
+          bonusText: string;
           size: number;
           isRed: string;
           year: string;
@@ -31,8 +34,13 @@ export default async function Home() {
           title: project.fields.title,
           role: project.fields.role,
           description: project.fields.description,
-          videoUrl: project.fields.videoUrl,
+
           size: project.fields.size,
+          ...(project.fields.videoUrl && { videoUrl: project.fields.videoUrl }),
+          ...(project.fields.imageUrl && { imageUrl: project.fields.imageUrl }),
+          ...(project.fields.bonusText && {
+            bonusText: project.fields.bonusText,
+          }),
           ...(project.fields.isRed === true && { color: "red" }),
           ...(project.fields.year && { year: project.fields.year }),
         })
