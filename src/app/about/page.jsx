@@ -65,7 +65,7 @@ const page = () => {
         </Link>
         <div className="relative bg-red-700 text-white py-1 overflow-hidden">
           <p className="whitespace-nowrap inline-block animate-marquee-slow md:animate-marquee-medium xl:animate-marquee-fast text-base md:text-2xl chromatic">
-            WARNING: YOUR PROJECT IS IN DIRE NEED OF WYATT WEYMOUTH'S HELP
+            {"WARNING: YOUR PROJECT IS IN DIRE NEED OF WYATT WEYMOUTH'S HELP"}
             <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
             EMERGENCY BROADCAST SYSTEM: FAILURE TO HIRE WYATT WEYMOUTH MAY
             RESULT IN CATASTROPHIC POST-PRODUCTION OUTCOMES{" "}
