@@ -155,17 +155,26 @@ const TVGuideControl = ({ data }: any) => {
         </div>
         <div className=" w-full flex flex-col justify-center items-center px-4 py-3 sm:p-6 relative portrait:h-[20vh] landscape:h-full xl:h-auto">
           <div className="overflow-auto">
-            <div className="relative text-white text-xl sm:text-3xl md:text-4xl 2xl:text-6xl font-bold flex text-center justify-center">
+            <div className="relative text-white text-2xl sm:text-3xl lg:text-4xl 2xl:text-6xl font-bold flex text-center justify-center">
               <span className="relative chromatic">
                 {data[urlIndex] && data[urlIndex].title}
               </span>
             </div>
-            <div className="relative text-yellow-300 text-base md:text-xl 2xl:text-3xl font-bold mt-0 sm:mt-2 md:mt-4 flex justify-center">
+            <div className="relative text-yellow-300 text-base lg:text-xl 2xl:text-3xl font-bold mt-0 sm:mt-2 md:mt-4 flex justify-center">
               <span className="relative chromatic flex text-center">
                 {data[urlIndex] && data[urlIndex].role}
               </span>
             </div>
-            <div className="relative  text-white text-sm md:text-base 2xl:text-xl font-bold mt-1 sm:mt-2 md:mt-4 flex justify-center">
+            {data[urlIndex] && data[urlIndex].bonusText && (
+              <div className="flex items-center justify-center mb-[1.5%] sm:mb-0">
+                <div className="relative  bg-red-700 text-white text-sm lg:text-lg 2xl:text-xl mt-1 sm:mt-2 md:mt-4 flex justify-center px-[1vw] font-bold">
+                  <span className="relative flex text-center">
+                    {data[urlIndex] && data[urlIndex].bonusText}
+                  </span>
+                </div>
+              </div>
+            )}
+            <div className="relative  text-white text-sm lg:text-base 2xl:text-xl font-bold mt-1 sm:mt-2 md:mt-4 flex justify-center">
               <span
                 className=" relative chromatic flex text-center"
                 dangerouslySetInnerHTML={{
@@ -175,13 +184,6 @@ const TVGuideControl = ({ data }: any) => {
                 }}
               ></span>
             </div>
-            {data[urlIndex] && data[urlIndex].bonusText && (
-              <div className="relative  text-yellow-300 text-sm md:text-base 2xl:text-xl mt-1 sm:mt-2 md:mt-4 flex justify-center">
-                <span className="relative chromatic flex text-center">
-                  {data[urlIndex] && data[urlIndex].bonusText}
-                </span>
-              </div>
-            )}
           </div>
         </div>
       </div>

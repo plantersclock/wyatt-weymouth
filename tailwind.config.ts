@@ -10,15 +10,15 @@ export default {
     extend: {
       keyframes: {
         marqueeslow: {
-          "0%": { transform: "translateX(15%)" },
+          "0%": { transform: "translateX(13%)" },
           "100%": { transform: "translateX(-100%)" },
         },
         marqueemedium: {
-          "0%": { transform: "translateX(30%)" },
+          "0%": { transform: "translateX(18%)" },
           "100%": { transform: "translateX(-100%)" },
         },
         marqueefast: {
-          "0%": { transform: "translateX(40%)" },
+          "0%": { transform: "translateX(25%)" },
           "100%": { transform: "translateX(-100%)" },
         },
       },
