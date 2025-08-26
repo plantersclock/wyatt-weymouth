@@ -10,21 +10,21 @@ export default {
     extend: {
       keyframes: {
         marqueeslow: {
-          "0%": { transform: "translateX(13%)" },
+          "0%": { transform: "translateX(25%)" },
           "100%": { transform: "translateX(-100%)" },
         },
         marqueemedium: {
-          "0%": { transform: "translateX(18%)" },
+          "0%": { transform: "translateX(32%)" },
           "100%": { transform: "translateX(-100%)" },
         },
         marqueefast: {
-          "0%": { transform: "translateX(25%)" },
+          "0%": { transform: "translateX(65%)" },
           "100%": { transform: "translateX(-100%)" },
         },
       },
       animation: {
-        "marquee-slow": "marqueeslow 60s linear infinite",
-        "marquee-medium": "marqueemedium 45s linear infinite",
+        "marquee-slow": "marqueeslow 30s linear infinite",
+        "marquee-medium": "marqueemedium 30s linear infinite",
         "marquee-fast": "marqueefast 30s linear infinite",
       },
       colors: {

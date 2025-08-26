@@ -65,7 +65,7 @@ const page = () => {
         </Link>
         <div className="relative bg-red-700 text-white py-1 overflow-hidden">
           <p className="whitespace-nowrap inline-block animate-marquee-slow md:animate-marquee-medium xl:animate-marquee-fast text-base md:text-2xl chromatic">
-            {"WARNING: YOUR PROJECT IS IN DIRE NEED OF WYATT WEYMOUTH'S HELP"}
+            {/* {"WARNING: YOUR PROJECT IS IN DIRE NEED OF WYATT WEYMOUTH'S HELP"}
             <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
             EMERGENCY BROADCAST SYSTEM: FAILURE TO HIRE WYATT WEYMOUTH MAY
             RESULT IN CATASTROPHIC POST-PRODUCTION OUTCOMES{" "}
@@ -77,7 +77,11 @@ const page = () => {
             SYSTEM OVERRIDE: HIRE WYATT WEYMOUTH OR PREPARE FOR TOTAL NARRATIVE
             COLLAPSE <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             CRITICAL FAILURE DETECTED: EDITING IN PROGRESS WITHOUT WYATT
-            WEYMOUTH INVOLVED
+            WEYMOUTH INVOLVED */}
+
+            {
+              "EMERGENCY BROADCAST SYSTEM: FAILURE TO HIRE WYATT WILL RESULT IN CATASTROPHIC POST-PRODUCTION OUTCOMES. PROJECT STABILITY COMPROMISED. NARRATIVE COLLAPSE. CRITICAL FAILURE."
+            }
           </p>
         </div>
         <div className="flex flex-col flex-grow items-center mt-20 sm:mt-8 md:mt-10 2xl:mt-24">
@@ -85,8 +89,7 @@ const page = () => {
             WYATT WEYMOUTH
           </h1>
           <h2 className="mt-2 sm:mt-5 chromatic text-base sm:text-lg md:text-xl 2xl:text-4xl font-medium  text-center mx-4 md:mx-20 text-yellow-300 leading-normal xl:leading-[3.5rem]">
-            Editor, Producer, Writer, Director, VFX Artist, Motion Designer,
-            Colorist
+            Editor, Producer, Director, Post-production
           </h2>
           <p className="mt-6 sm:mt-4 md:mt-6 2xl:mt-20 text-white text-center  mx-4 md:mx-20 chromatic leading-normal text-sm sm:text-[clamp(.25rem,1.5vw,1.7rem)]">
             Wyatt Weymouth is a filmmaker and editor based in Los Angeles. His

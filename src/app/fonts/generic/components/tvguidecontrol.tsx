@@ -144,7 +144,7 @@ const TVGuideControl = ({ data }: any) => {
               />
             </div>
           ) : (
-            <div className="relative bg-black w-full portrait:h-[33vh] landscape:h-full landscape:min-h-[30vh] xl:h-full aspect-[4/3]">
+            <div className="relative bg-black w-full portrait:h-[30vh] landscape:h-full landscape:min-h-[30vh] xl:h-full aspect-[4/3]">
               <img
                 src={data[urlIndex]?.imageUrl}
                 alt="backup-image"
@@ -174,7 +174,7 @@ const TVGuideControl = ({ data }: any) => {
                 </div>
               </div>
             )}
-            <div className="relative  text-white text-sm lg:text-base 2xl:text-xl font-bold mt-1 sm:mt-2 md:mt-4 flex justify-center">
+            <div className="hidden sm:block relative  text-white text-sm lg:text-base 2xl:text-xl font-bold mt-1 sm:mt-2 md:mt-4 flex justify-center">
               <span
                 className=" relative chromatic flex text-center"
                 dangerouslySetInnerHTML={{
