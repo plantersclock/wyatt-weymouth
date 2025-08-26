@@ -174,9 +174,9 @@ const TVGuideControl = ({ data }: any) => {
                 </div>
               </div>
             )}
-            <div className="hidden sm:block relative  text-white text-sm lg:text-base 2xl:text-xl font-bold mt-1 sm:mt-2 md:mt-4 flex justify-center">
+            <div className="hidden sm:block relative text-white text-sm lg:text-base 2xl:text-xl font-bold mt-1 sm:mt-2 md:mt-4 flex justify-center">
               <span
-                className=" relative chromatic flex text-center"
+                className=" relative chromatic flex text-center justify-center"
                 dangerouslySetInnerHTML={{
                   __html: marked.parse(
                     (data[urlIndex]?.description ?? "").replace(/\n/g, "<br>")
