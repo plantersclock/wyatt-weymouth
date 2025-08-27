@@ -155,7 +155,7 @@ const TVGuideControl = ({ data }: any) => {
         </div>
         <div className=" w-full flex flex-col justify-center items-center px-4 py-3 sm:p-6 relative portrait:h-[20vh] landscape:h-full xl:h-auto">
           <div className="overflow-auto">
-            <div className="relative text-white text-2xl sm:text-3xl lg:text-4xl 2xl:text-6xl font-bold flex text-center justify-center">
+            <div className="relative text-white text-xl sm:text-3xl lg:text-4xl 2xl:text-6xl font-bold flex text-center justify-center">
               <span className="relative chromatic">
                 {data[urlIndex] && data[urlIndex].title}
               </span>
