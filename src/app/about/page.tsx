@@ -3,6 +3,21 @@ import { UilInstagram, UilEnvelopeAlt } from "@iconscout/react-unicons";
 import Link from "next/link";
 import Image from "next/image";
 import wtv from "../../images/wtv.webp";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Wyatt Weymouth",
+  description: "Learn about Wyatt Weymouth, Los Angeles-based filmmaker and editor. His work spans narrative features, documentaries, shorts, and music videos, with credits including The Secrets of Hillsong (FX/Hulu), Magic City (Starz), Life Upside Down, Living for the Dead (Hulu), and Made by God.",
+  openGraph: {
+    title: "About Wyatt Weymouth - Director, Editor & Motion Designer",
+    description: "Los Angeles filmmaker specializing in documentaries and narrative features. Credits include The Secrets of Hillsong, Living for the Dead, Life Upside Down, and Magic City.",
+    url: "https://wyattweymouth.com/about",
+  },
+  twitter: {
+    title: "About Wyatt Weymouth - Director, Editor & Motion Designer",
+    description: "Los Angeles filmmaker specializing in documentaries and narrative features. Credits include The Secrets of Hillsong, Living for the Dead, Life Upside Down, and Magic City.",
+  },
+};
 
 const page = () => {
   return (
@@ -64,21 +79,7 @@ const page = () => {
           </div>
         </Link>
         <div className="relative bg-red-700 text-white py-1 overflow-hidden">
-          <p className="whitespace-nowrap inline-block animate-marquee-slow md:animate-marquee-medium xl:animate-marquee-fast text-base md:text-2xl chromatic">
-            {/* {"WARNING: YOUR PROJECT IS IN DIRE NEED OF WYATT WEYMOUTH'S HELP"}
-            <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-            EMERGENCY BROADCAST SYSTEM: FAILURE TO HIRE WYATT WEYMOUTH MAY
-            RESULT IN CATASTROPHIC POST-PRODUCTION OUTCOMES{" "}
-            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-            URGENT ALERT: PROJECT STABILITY COMPROMISED — WYATT WEYMOUTH NOT YET
-            ATTACHED <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            WARNING: WITHOUT WYATT WEYMOUTH, THIS EDIT IS ON A DIRECT PATH TO
-            DISASTER <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            SYSTEM OVERRIDE: HIRE WYATT WEYMOUTH OR PREPARE FOR TOTAL NARRATIVE
-            COLLAPSE <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            CRITICAL FAILURE DETECTED: EDITING IN PROGRESS WITHOUT WYATT
-            WEYMOUTH INVOLVED */}
-
+          <p className="whitespace-nowrap inline-block animate-marquee-slow-delay md:animate-marquee-medium-delay xl:animate-marquee-fast-delay text-base md:text-2xl chromatic">
             {
               "EMERGENCY BROADCAST SYSTEM: FAILURE TO HIRE WYATT WILL RESULT IN CATASTROPHIC POST-PRODUCTION OUTCOMES. PROJECT STABILITY COMPROMISED. NARRATIVE COLLAPSE. CRITICAL FAILURE."
             }
@@ -92,14 +93,17 @@ const page = () => {
             Editor, Producer, Director, Post-production
           </h2>
           <p className="mt-6 sm:mt-4 md:mt-6 2xl:mt-20 text-white text-center  mx-4 md:mx-20 chromatic leading-normal text-sm sm:text-[clamp(.25rem,1.5vw,1.7rem)]">
-            Wyatt Weymouth is a filmmaker and editor based in Los Angeles. His
+            {`Wyatt Weymouth is a filmmaker and editor based in Los Angeles. His
             work spans narrative features, documentaries, shorts, and music
             videos, with credits including The Secrets of Hillsong (FX/Hulu),
             Magic City: An American Fantasy (Starz), Life Upside Down (with Bob
             Odenkirk), Living for the Dead (Hulu), and the acclaimed short film
-            Made by God. Weymouth brings strong instincts and a collaborative
-            spirit to every project—whether he’s on set, leading the edit, or
-            stepping in as a trusted closer.
+            Made by God. His work has been covered and reviewed in almost every
+            major media publication - The New York Times, Time Magazine,
+            Harper’s Bazaar, and Rolling Stone (just to name a few). Weymouth
+            brings strong instincts and a collaborative spirit to every
+            project—whether he’s on set, leading the edit, or stepping in as a
+            trusted closer.`}
           </p>
           <div className="mt-12 sm:mt-8 md:mt-10 2xl:mt-20 flex mx-auto w-[80%] justify-between ">
             <Link
@@ -125,7 +129,7 @@ const page = () => {
             </Link>
 
             <div className="flex items-center flex-col relative">
-              <a a href="mailto:wyatt.weymouth@gmail.com ">
+              <a href="mailto:wyatt.weymouth@gmail.com">
                 <UilEnvelopeAlt
                   className="h-8 w-8 md:h-12 md:w-12 text-white transition-transform duration-200 ease-in-out hover:scale-105 cursor-pointer"
                   style={{ filter: "url(#chromatic)" }}

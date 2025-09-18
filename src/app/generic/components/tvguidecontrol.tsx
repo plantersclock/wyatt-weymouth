@@ -6,100 +6,24 @@ import ReactPlayerComponent from "./reactplayer";
 import LoopingMenu from "./loopingmenu";
 import TimeBar from "./timebar";
 import Link from "next/link";
-import wtv from "../../../../images/wtv.webp";
-import wam from "../../../../images/logo-no-border.webp";
+import wtv from "../../../images/wtv.webp";
+import wam from "../../../images/logo-no-border.webp";
 import Image from "next/image";
 
 import { marked } from "marked";
+import {
+  TVGuideControlProps,
+  PortfolioProject,
+} from "../../../types/portfolio";
 
-const TVGuideControl = ({ data }: any) => {
-  // const data = [
-  //   {
-  //     ch: 1,
-  //     channel: "ABOUT",
-  //     title: "Wyatt Weymouth",
-  //     role: "Producer, Writer, Director, Editor, VFX Artist, Colorist, Motion Designer",
-  //     description:
-  //       "Wyatt Weymouth is a versatile and visionary creative force in the world of filmmaking and digital storytelling. With expertise spanning producing, writing, directing, editing, visual effects, color grading, and motion design, Wyatt crafts compelling narratives and visually stunning experiences. His multidisciplinary approach ensures a seamless fusion of creativity and technical precision, bringing stories to life with impact and innovation.",
-  //     videoUrl: "https://vimeo.com/372460574?share=copy",
-  //     size: 1,
-  //   },
-  //   {
-  //     ch: 2,
-  //     channel: "DOCS1",
-  //     year: "2023",
-  //     title: "Living for the Dead",
-  //     role: "Editor, Motion Designer",
-  //     description:
-  //       "From the creators of “Queer Eye”, five fabulous, queer ghost hunters roam the country, helping the living by healing the dead. Our gay ‘Ghost Hunties’ explore infamous haunted locations while pushing past boundaries with both the living and the deceased. Watch Living for the Dead on Hulu!",
-  //     videoUrl: "https://www.youtube.com/watch?v=Y15RhMymDxo",
-  //     size: 1,
-  //   },
-  //   {
-  //     ch: 3,
-  //     channel: "DOCS2",
-  //     year: "2023",
-  //     title: "The Secrets of Hillsong",
-  //     role: "Editor, Motion Designer",
-  //     description:
-  //       "Directed by Stacey Lee, The Secrets of Hillsong features the first interviews with former pastors Carl and Laura Lentz since their public ouster from the church, which for years counted musicians, actors, athletes and other celebrities among its flock.",
-  //     videoUrl: "https://www.youtube.com/watch?v=10zaSh0QEaU",
-  //     size: 2,
-  //   },
-  //   {
-  //     ch: 4,
-  //     channel: "FILM",
-  //     year: "2023",
-  //     title: "Life Upside Down",
-  //     role: "Additional Editor",
-  //     description:
-  //       "A romantic comedy about time, distance, and the human condition. Three couples, connected by friendship, love and work, are each stuck in their respective homes in Los Angeles during the beginning of lockdown. Finally forced to face their spouses, friends, lovers, and eventually themselves head on, their lives turn slowly but surely upside-down.",
-  //     videoUrl: "https://www.youtube.com/watch?v=vrbAXTWcwQ8",
-  //     size: 3,
-  //     color: "red",
-  //   },
-  //   {
-  //     ch: 5,
-  //     channel: "SHORT",
-  //     year: "2022",
-  //     title: "Made By God",
-  //     role: "Producer, Writer, Director, Editor, VFX, Colorist",
-  //     description:
-  //       "A Sidewalk Film Festival and Florida Film Festival selection. The life of a directionless young man takes a violent turn in rural Florida.",
-  //     videoUrl: "https://vimeo.com/707604096",
-  //     size: 1,
-  //   },
-  //   {
-  //     ch: 6,
-  //     channel: "MV",
-  //     year: "2022",
-  //     title: "Drab Majesty - Noise of the Void",
-  //     role: "Colorist",
-  //     description:
-  //       "Drab Majesty presents a new for 2022 video for `Noise of the Void` from the album 'Modern Mirror.",
-  //     videoUrl: "https://www.youtube.com/watch?v=DVqnmu5KINM",
-  //     size: 1,
-  //   },
-  //   {
-  //     ch: 7,
-  //     channel: "TEST",
-  //     year: "2025",
-  //     title: "TEST - TEST",
-  //     role: "Colorist",
-  //     description:
-  //       "Drab Majesty presents a new for 2022 video for `Noise of the Void` from the album 'Modern Mirror.",
-  //     videoUrl: "https://www.youtube.com/watch?v=DVqnmu5KINM",
-  //     size: 1,
-  //   },
-  // ];
-
+const TVGuideControl = ({ data }: TVGuideControlProps) => {
   const [urlIndex, setUrlIndex] = useState(0);
   const [selectedItemTitle, setSelectedItemTitle] = useState(data[0].title);
   const [isMuted, setIsMuted] = useState(true);
 
   const handleItemClick = (selectedTitle: string) => {
     const index = data.findIndex(
-      (item: { title: string }) => item.title === selectedTitle
+      (item: PortfolioProject) => item.title === selectedTitle
     );
     setIsMuted(false);
     setSelectedItemTitle(selectedTitle);
@@ -145,11 +69,18 @@ const TVGuideControl = ({ data }: any) => {
             </div>
           ) : (
             <div className="relative bg-black w-full portrait:h-[30vh] landscape:h-full landscape:min-h-[30vh] xl:h-full aspect-[4/3]">
-              <img
-                src={data[urlIndex]?.imageUrl}
-                alt="backup-image"
-                className="absolute inset-0 w-full h-full object-contain"
-              />
+              {data[urlIndex]?.imageUrl && (
+                <Image
+                  src={data[urlIndex].imageUrl}
+                  alt={`${data[urlIndex].title} project image`}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={urlIndex === 0}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                />
+              )}
             </div>
           )}
         </div>

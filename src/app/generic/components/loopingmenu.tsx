@@ -1,9 +1,13 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import { LoopingMenuProps } from "../../../types/portfolio";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
+const LoopingMenu = ({
+  data,
+  handleItemClick,
+  selectedItemTitle,
+}: LoopingMenuProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const scrollSpeed = 1; // pixels per tick
@@ -15,7 +19,6 @@ const LoopingMenu = ({ data, handleItemClick, selectedItemTitle }: any) => {
 
   const startAutoScroll = () => {
     const container = containerRef.current;
-    console.log("Auto-scroll started");
     if (!container) return;
 
     if (scrollRef.current) clearInterval(scrollRef.current);
