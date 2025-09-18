@@ -12,7 +12,7 @@ const LoopingMenu = ({
 
   const scrollSpeed = 1; // pixels per tick
   const tickRate = 30; // ms
-  const pauseDuration = 1000; // ms
+  const pauseDuration = 3000; // ms
 
   const scrollRef = useRef<NodeJS.Timeout | null>(null);
   const pauseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
